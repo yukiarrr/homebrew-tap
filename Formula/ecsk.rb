@@ -5,24 +5,24 @@
 class Ecsk < Formula
   desc "ecsk is a CLI tool to interactively use frequently used functions of docker command in Amazon ECS. (docker run, exec, cp, logs, stop)"
   homepage "https://github.com/yukiarrr/ecsk"
-  version "0.5.5"
+  version "0.5.6"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/yukiarrr/ecsk/releases/download/v0.5.5/ecsk_Darwin_x86_64.tar.gz"
-    sha256 "04f4aadc762d164efd907432d827ed2a8caa9400dc792ade342f8c6661e3b24b"
+    url "https://github.com/yukiarrr/ecsk/releases/download/v0.5.6/ecsk_Darwin_x86_64.tar.gz"
+    sha256 "9e3b41acf77920ad06196776df39c7b9f64054a19bde90180758b254be3493d3"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/yukiarrr/ecsk/releases/download/v0.5.5/ecsk_Darwin_arm64.tar.gz"
-    sha256 "a2ee7c9e02be3260f4172d79aa1619709a10b04ec63811e7d847905aa0e14322"
+    url "https://github.com/yukiarrr/ecsk/releases/download/v0.5.6/ecsk_Darwin_arm64.tar.gz"
+    sha256 "184eb8465c3fefee9d00f3b33167dd4f6a3a81c846cd2824079c21a2624a15e8"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/yukiarrr/ecsk/releases/download/v0.5.5/ecsk_Linux_x86_64.tar.gz"
-    sha256 "1ad3a2dc6405e5b99c2b1c21d57dc47c8b151d67a54cf381a555fb2c9e55aa3d"
+    url "https://github.com/yukiarrr/ecsk/releases/download/v0.5.6/ecsk_Linux_x86_64.tar.gz"
+    sha256 "8aab5fd9624ed273c4412e4973ce18eda2d5ea45d637c3eafd3dcd05580dd647"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/yukiarrr/ecsk/releases/download/v0.5.5/ecsk_Linux_arm64.tar.gz"
-    sha256 "14a7557483e3f6762231c984f9cfc7a0845f176224335ff8e664dee1a15f9926"
+    url "https://github.com/yukiarrr/ecsk/releases/download/v0.5.6/ecsk_Linux_arm64.tar.gz"
+    sha256 "3ab3f68ca8af4776b6c78a91c2f20ff3fea4b2e673ce24a81076e2612cf3d484"
   end
 
   def install
