@@ -5,24 +5,29 @@
 class Ecsk < Formula
   desc "ecsk is a CLI tool to interactively use frequently used functions of docker command in Amazon ECS. (docker run, exec, cp, logs, stop)"
   homepage "https://github.com/yukiarrr/ecsk"
-  version "0.6.1"
+  version "0.6.2"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.1/ecsk_Darwin_x86_64.tar.gz"
-    sha256 "87af7454bca55f29649dde251576d7e886e3db01fd30c68482f0f76bd0b5961b"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.2/ecsk_Darwin_x86_64.tar.gz"
+      sha256 "e7cacd482430a1360a1643cf98e5c2ecf1482bf6b249b4f8e091da3c917c25a9"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.2/ecsk_Darwin_arm64.tar.gz"
+      sha256 "952264d8583db12e03338a53f1887ab234a1dca2fcc75aa7ccbe772be6adfd10"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.1/ecsk_Darwin_arm64.tar.gz"
-    sha256 "332c1803634edc6d92b9b78a63c6c1cc8d9009c680b33cf6fb4c30c6c51745fa"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.1/ecsk_Linux_x86_64.tar.gz"
-    sha256 "e3c3d5449482ee48d25a32894cd008dd81ca82da6e955304947907b36c70afa6"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.1/ecsk_Linux_arm64.tar.gz"
-    sha256 "606a7fafab92e91024a17afb1a38fe7be4ce2b4a58a0b901f176e0f6dc2fb9cb"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.2/ecsk_Linux_x86_64.tar.gz"
+      sha256 "cfd085d58cf0be559cc87a6ffc659404edb8d435a1182331b625e274f4805602"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.2/ecsk_Linux_arm64.tar.gz"
+      sha256 "58d5200984a024c545a9505c418e6301d64485db24de0191dfd88c4c7fc597f0"
+    end
   end
 
   def install
