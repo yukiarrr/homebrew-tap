@@ -5,33 +5,44 @@
 class Ecsk < Formula
   desc "ecsk is a CLI tool to interactively use frequently used functions of docker command in Amazon ECS. (docker run, exec, cp, logs, stop)"
   homepage "https://github.com/yukiarrr/ecsk"
-  version "0.6.2"
-  bottle :unneeded
+  version "0.7.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.2/ecsk_Darwin_x86_64.tar.gz"
-      sha256 "e7cacd482430a1360a1643cf98e5c2ecf1482bf6b249b4f8e091da3c917c25a9"
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.7.0/ecsk_Darwin_x86_64.tar.gz"
+      sha256 "9926e39debd67397265df75f8d648baab572240431d5371939e4a06fd9030fea"
+
+      def install
+        bin.install "ecsk"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.2/ecsk_Darwin_arm64.tar.gz"
-      sha256 "952264d8583db12e03338a53f1887ab234a1dca2fcc75aa7ccbe772be6adfd10"
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.7.0/ecsk_Darwin_arm64.tar.gz"
+      sha256 "3b98480919fa7fff11dc77a808a4691c37b254ba8f433219f9de11804557af03"
+
+      def install
+        bin.install "ecsk"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.2/ecsk_Linux_x86_64.tar.gz"
-      sha256 "cfd085d58cf0be559cc87a6ffc659404edb8d435a1182331b625e274f4805602"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/yukiarrr/ecsk/releases/download/v0.6.2/ecsk_Linux_arm64.tar.gz"
-      sha256 "58d5200984a024c545a9505c418e6301d64485db24de0191dfd88c4c7fc597f0"
-    end
-  end
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.7.0/ecsk_Linux_arm64.tar.gz"
+      sha256 "4a626f422144d6425eb97833e73f34c91f46b96acdc2a0ebac7d615cb2df10ac"
 
-  def install
-    bin.install "ecsk"
+      def install
+        bin.install "ecsk"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.7.0/ecsk_Linux_x86_64.tar.gz"
+      sha256 "5459a0f4cc9558b75dcbce7f375a352caa6e692dd3d13fb778c8bf63c2c7d5fd"
+
+      def install
+        bin.install "ecsk"
+      end
+    end
   end
 
   test do
