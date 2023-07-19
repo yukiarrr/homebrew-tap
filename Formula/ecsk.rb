@@ -5,20 +5,20 @@
 class Ecsk < Formula
   desc "ecsk is a CLI tool to interactively use frequently used functions of docker command in Amazon ECS. (docker run, exec, cp, logs, stop)"
   homepage "https://github.com/yukiarrr/ecsk"
-  version "0.9.0"
+  version "0.9.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.0/ecsk_Darwin_x86_64.tar.gz"
-      sha256 "f087f1da579c19b497ad4b0d040ceb76ab4b1e136b79304f2e8514b202d0daf2"
+    if Hardware::CPU.arm?
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.1/ecsk_Darwin_arm64.tar.gz"
+      sha256 "1aeced5c35ea181de5d249bf29a3861cc2f359de8cd820f7533513770b0c6538"
 
       def install
         bin.install "ecsk"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.0/ecsk_Darwin_arm64.tar.gz"
-      sha256 "d8feecf925ea6562f22b4477ad283f6029eac13bc5619d83152c10467450aeef"
+    if Hardware::CPU.intel?
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.1/ecsk_Darwin_x86_64.tar.gz"
+      sha256 "352cd9b2605ab7f9d62a2cccefe6452daffa3a0f15c2af1196b70423ca584583"
 
       def install
         bin.install "ecsk"
@@ -27,17 +27,17 @@ class Ecsk < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.0/ecsk_Linux_arm64.tar.gz"
-      sha256 "ed72665725477877545c94aa9a0b20d5f809621890e7473344eaf28a9e591ce0"
+    if Hardware::CPU.intel?
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.1/ecsk_Linux_x86_64.tar.gz"
+      sha256 "28905a89c9cd897c05f44f8d4a2b70548b13a7a305eb004c12e2dc71692a4444"
 
       def install
         bin.install "ecsk"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.0/ecsk_Linux_x86_64.tar.gz"
-      sha256 "d3f6ac908f471a31b339c1f5b5c09a5c11cedf4c1f370b9b327aeebca34dfbd2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.1/ecsk_Linux_arm64.tar.gz"
+      sha256 "2b002af9b941a4b21197c8a0ade964dde93ed4ef5afb3abc81fb3f655054c60b"
 
       def install
         bin.install "ecsk"
