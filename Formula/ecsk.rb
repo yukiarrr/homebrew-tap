@@ -5,20 +5,20 @@
 class Ecsk < Formula
   desc "ecsk is a CLI tool to interactively use frequently used functions of docker command in Amazon ECS. (docker run, exec, cp, logs, stop)"
   homepage "https://github.com/yukiarrr/ecsk"
-  version "0.9.3"
+  version "0.9.4"
 
   on_macos do
     on_intel do
-      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.3/ecsk_Darwin_x86_64.tar.gz"
-      sha256 "475ccc6b3828b150f94cc2c6f8c90f1816fa368f8bcffd3ed0a46d72a6bf7df0"
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.4/ecsk_Darwin_x86_64.tar.gz"
+      sha256 "6004539f0e72e8d183a94ef46ed5cd750de261d4481669ebc5c5ac8bf6b446ad"
 
       def install
         bin.install "ecsk"
       end
     end
     on_arm do
-      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.3/ecsk_Darwin_arm64.tar.gz"
-      sha256 "97b980088288aec4fc7755c9309e99baa2d06ed7d4505b959c509f9b69f8e908"
+      url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.4/ecsk_Darwin_arm64.tar.gz"
+      sha256 "98792e8442f2c6064ee096a635e9f28f6b2c9c1b440fed3c599e4116716d3581"
 
       def install
         bin.install "ecsk"
@@ -29,8 +29,8 @@ class Ecsk < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.3/ecsk_Linux_x86_64.tar.gz"
-        sha256 "4f5da955cebec47585d1b79badc30536bfd3daff16778bcf4d2ce386f815813e"
+        url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.4/ecsk_Linux_x86_64.tar.gz"
+        sha256 "f5634e983b928c99f93a41a8b27a5b9132553229b6b70803da456069358e62c7"
 
         def install
           bin.install "ecsk"
@@ -39,8 +39,8 @@ class Ecsk < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.3/ecsk_Linux_arm64.tar.gz"
-        sha256 "850ad628c8c6302681cf795492c45ac46d82e6f574766e178b0cadaa3aac0d3a"
+        url "https://github.com/yukiarrr/ecsk/releases/download/v0.9.4/ecsk_Linux_arm64.tar.gz"
+        sha256 "8b9c26e1378a44754c83e41ade35b230e0ab9dea71b9ade2a010a2cda4b56e77"
 
         def install
           bin.install "ecsk"
